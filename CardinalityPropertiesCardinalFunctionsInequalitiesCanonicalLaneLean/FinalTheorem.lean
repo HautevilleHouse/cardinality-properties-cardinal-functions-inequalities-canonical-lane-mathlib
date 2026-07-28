@@ -1,0 +1,15 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CardinalityPropertiesCardinalFunctionsInequalitiesCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.CardinalityPropertiesCardinalFunctionsInequalitiesCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace CardinalityPropertiesCardinalFunctionsInequalitiesCanonicalLaneLean
+
+def ConstrainedCardinalInequalitiesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem cardinal_inequalities_endgame (A : AdmissibleClass) : ConstrainedCardinalInequalitiesClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CardinalityPropertiesCardinalFunctionsInequalitiesCanonicalLaneLean
+end HautevilleHouse
